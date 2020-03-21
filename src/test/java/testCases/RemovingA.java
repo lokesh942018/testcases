@@ -12,32 +12,32 @@ public class RemovingA {
 	 * 3.   3 A at indices 2 "BACD"="BCD"-success
 	 * 4.   0 A "BBCD"="BBCD"-success
 	 */
-	
-	
+	RemoveFirst2A removeFirst2A;
+	@BeforeEach
+	public void setUp()
+	{
+		removeFirst2A=new RemoveFirst2A();
+	}
 
 	@Test
 	public void testRemoveAAt1() {
-		RemoveFirst2A removeFirst2A=new RemoveFirst2A();
-		String actual=removeFirst2A.remove("ABCD");
-		assertEquals("BCD",actual);
+		setUp();
+		assertEquals("BCD",removeFirst2A.remove("ABCD"));
 	}
 	@Test
 	public void testRemoveAAt01() {
-		RemoveFirst2A removeFirst2A=new RemoveFirst2A();
-		String actual=removeFirst2A.remove("AACD");
-		assertEquals("CD",actual);
+		setUp();
+		assertEquals("CD",removeFirst2A.remove("AACD"));
 	}
 	@Test
 	public void testRemoveAAt2() {
-		RemoveFirst2A removeFirst2A=new RemoveFirst2A();
-		String actual=removeFirst2A.remove("BACD");
-		assertEquals("BCD",actual);
+		setUp();
+		assertEquals("BCD",removeFirst2A.remove("BACD"));
 	}
 	@Test
 	public void testRemoveNoA() {
-		RemoveFirst2A removeFirst2A=new RemoveFirst2A();
-		String actual=removeFirst2A.remove("BBCD");
-		assertEquals("BBCD",actual);
+		setUp();
+		assertEquals("BBCD",removeFirst2A.remove("BBCD"));
 	}
 	
 
